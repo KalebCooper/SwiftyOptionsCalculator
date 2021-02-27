@@ -14,10 +14,10 @@ public class Option: ObservableObject {
     // MARK: - Public API
     //----------------------------------------------------------------
     
-    @Published var inputs: OptionInput
-    @Published var price: Double
+    @Published public var inputs: OptionInput
+    @Published public var price: Double
     
-    init(_ inputs: OptionInput) {
+    public init(_ inputs: OptionInput) {
         self.inputs = inputs
         self.price = calculator.getPrice(basedOn: inputs)
     }

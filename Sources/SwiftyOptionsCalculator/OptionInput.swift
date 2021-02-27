@@ -6,30 +6,29 @@
 //
 
 import Combine
-import Foundation
 
 public class OptionInput: ObservableObject {
     
     /// The method used for calculating the value of the given option
-    var formulaType: OptionFormulaType = .blackScholes
+    public var formulaType: OptionFormulaType = .blackScholes
     
     /// current price of the underlying asset
-    var currentPrice: Double
+    public var currentStockPrice: Double
     /// strike price of the option
-    var strikePrice: Double
+    public var strikePrice: Double
     /// annual risk-free interest rate
-    var interestRate: Double
+    public var interestRate: Double
     /// volatility of the underlying asset
-    var impliedVolatility: Double
+    public var impliedVolatility: Double
     /// time to expiration of the option in years
-    var timeToExpiration: Double
+    public var timeToExpiration: Double
     
     public init(currentPrice: Double,
                 strikePrice: Double,
                 interestRate: Double,
                 impliedVolatility: Double,
                 timeToExpiration: Double) {
-        self.currentPrice = currentPrice
+        self.currentStockPrice = currentPrice
         self.strikePrice = strikePrice
         self.interestRate = interestRate
         self.impliedVolatility = impliedVolatility
@@ -37,8 +36,8 @@ public class OptionInput: ObservableObject {
     }
 }
 
-public extension OptionInput {
-    static func getMockOption() -> OptionInput {
+extension OptionInput {
+    public static func getMockOptionInput() -> OptionInput {
         return OptionInput(
             currentPrice: 8.01,
             strikePrice: 7,

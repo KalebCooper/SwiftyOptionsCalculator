@@ -23,7 +23,7 @@ public class OptionCalculator {
     
     private func getBlackScholesPrice(_ inputs: OptionInput) -> Double {
         
-        let currentStockPrice = inputs.currentPrice
+        let currentStockPrice = inputs.currentStockPrice
         let strikePrice = inputs.strikePrice
         let interestRate = inputs.interestRate
         let impliedVolatility = inputs.impliedVolatility
