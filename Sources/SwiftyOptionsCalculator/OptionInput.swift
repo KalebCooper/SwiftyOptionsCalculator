@@ -37,8 +37,8 @@ public class OptionInput: ObservableObject {
     }
 }
 
-extension OptionInput {
-    func getMockOption() -> OptionInput {
+public extension OptionInput {
+    static func getMockOption() -> OptionInput {
         return OptionInput(
             currentPrice: 8.01,
             strikePrice: 7,
